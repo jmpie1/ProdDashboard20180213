@@ -65,3 +65,11 @@ Repport$Priority<-VEC_LABEL_INCIDENT[Repport$Priority]
 sum(is.na(Repport$Priority))==0
 
 
+Repport %>% filter(is.na(`Status History Resolved Date`)& is.na(`Status History Closed Date`)
+                   & is.na(`Status History Cancelled Date`) & `Submit Date`<= as.POSIXct("2018-02-11 09:41:28",tz="UTC", format="%Y-%m-%d %H:%M:%OS")) %>% 
+          select(Product, Priority) %>% 
+           group_by(Product) %>% 
+           count()
+         
+
+
