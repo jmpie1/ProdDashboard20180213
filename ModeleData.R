@@ -52,3 +52,16 @@ Repport$Product<-VEC_LABEL_PRODRUIT[Repport$`Product Categorization Product Name
 # Si le test ne retourne pas true on doit modifier VEC_LABEL_PRODRUIT; cad 1 ou 
 # plusieurs prudruits n'est pas pris en compte
 sum(is.na(Repport$Product))==0
+
+
+# LABELER LA SÉVÉRITÉ DES INCIDENTS
+
+VEC_LABEL_INCIDENT<-c("High"="P1P2", "Critical" ="P1P2", "Low"="P3P4", "Medium"="P3P4")
+
+Repport$Priority<-VEC_LABEL_INCIDENT[Repport$Priority]
+
+# TEST 
+# Ce test doit retourner TRUE, sinon vérifie les étiquetes
+sum(is.na(Repport$Priority))==0
+
+
